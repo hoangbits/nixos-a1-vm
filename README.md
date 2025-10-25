@@ -30,7 +30,26 @@ Distributions > Linux Network Installs (arm64)
 NixOS
 NixOS nixos-25.05
 
+
+
 ##  3.repartition
+
+```
+
+To log in over ssh you must set a password for either "nixos" or "root"
+with `passwd` (prefix with `sudo` for "root"), or add your public key to
+/home/nixos/.ssh/authorized_keys or /root/.ssh/authorized_keys.
+
+sudo passwd
+```
+
+ssh config
+```
+GITHUB_USERNAME='hoangbits'
+mkdir -p ~/.ssh && \
+  curl "https://github.com/${GITHUB_USERNAME}.keys" > ~/.ssh/authorized_keys
+```
+
 ```
 sudo su
 cd "$(mktemp --directory)"
